@@ -5,7 +5,7 @@
   <meta name="generator" content="Hexo 6.3.0">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
   <meta charset="utf-8">
-  <meta name="robots" content="noindex,follow">
+  
 
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
@@ -20,20 +20,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>归档 - leesum</title>
+  <title>E203 ICB 总线地址范围判断 - leesum</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://leesum1.github.io/archives/2023/09/index.html">
+    <meta name="description" content="E203 ICB 总线地址范围判断时序图 参考《手把手教你设计 RISC-V 处理器》  地址范围判断在我参加一生一芯 时，也需要对总线的地址范围进行判断来确定哪一部分是需要进行 Cache 缓存的。我当时是这样写的 1assign in_area &#x3D; addr&gt;&#x3D;low &amp;&amp; addr&lt;high  这样写确实可以满足需求，消耗的逻辑元件也会比较多，至少从明面上来看会有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="E203 ICB 总线地址范围判断">
+<meta property="og:url" content="https://leesum1.github.io/2023/09/22/e203%20icb%20%E6%80%BB%E7%BA%BF%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="leesum">
+<meta property="og:description" content="E203 ICB 总线地址范围判断时序图 参考《手把手教你设计 RISC-V 处理器》  地址范围判断在我参加一生一芯 时，也需要对总线的地址范围进行判断来确定哪一部分是需要进行 Cache 缓存的。我当时是这样写的 1assign in_area &#x3D; addr&gt;&#x3D;low &amp;&amp; addr&lt;high  这样写确实可以满足需求，消耗的逻辑元件也会比较多，至少从明面上来看会有">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/leesum1/doc/img/icb%E5%9C%B0%E5%9D%80%E5%88%A4%E6%96%AD.drawio1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/leesum1/doc/img/202304181517305.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/leesum1/doc/img/202304181529359.png">
+<meta property="article:published_time" content="2023-09-22T15:15:38.648Z">
+<meta property="article:modified_time" content="2023-09-22T15:15:38.648Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="E203">
+<meta property="article:tag" content="总线">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/leesum1/doc/img/icb%E5%9C%B0%E5%9D%80%E5%88%A4%E6%96%AD.drawio1.png">
   
   
   
-  
+  <meta name="keywords" content="E203,总线">
 
   <!-- feed -->
   
@@ -58,8 +68,10 @@
   
 
 
+
+
   <div class='l_body' id='start'>
-    <aside class='l_left' layout=''>
+    <aside class='l_left' layout='post'>
     
 
   
@@ -73,120 +85,67 @@
 <div class="widgets">
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2023/09/22/e203%20icb%20%E6%80%BB%E7%BA%BF%E5%88%86%E6%9E%90/"><span class="title">E203 ICB 总线地址范围判断</span></a><a class="item title" href="/2023/09/22/%E4%B8%BA%20RT-thread%20%E6%8F%90%E4%BA%A4%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%20PR/"><span class="title">为 RT-thread 提交的第一个 PR</span></a><a class="item title" href="/2023/09/22/Archlinux%20%E8%A7%A3%E5%86%B3%20KDE%20X11%20%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E5%B1%8F%E5%B9%95%E6%92%95%E8%A3%82%E7%9A%84%E9%97%AE%E9%A2%98/"><span class="title">Archlinux 解决 KDE X11 多显示器屏幕撕裂的问题</span></a><a class="item title" href="/2023/09/22/cva6%20%E4%B9%B1%E5%BA%8F%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86/"><span class="title">CVA6 乱序执行原理</span></a><a class="item title" href="/2023/09/22/hello-world/"><span class="title">Hello World</span></a></div></widget>
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">E203 ICB 总线地址范围判断</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E5%9B%BE"><span class="toc-text">时序图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E8%8C%83%E5%9B%B4%E5%88%A4%E6%96%AD"><span class="toc-text">地址范围判断</span></a></li></ol></div></div></widget>
+
+
 
 
 </div>
 
 
     </aside>
-    <div class='l_main list'>
+    <div class='l_main'>
       
-  
-
-<header class="header mobile-only"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">leesum</div><div class="sub cap">leesum blog</div></a></div></header>
-
-
 
       
 
-  
-  
 
-<div class="nav-wrap"><nav class="sub post cap"><a href="/">近期发布</a><a href="/categories">分类</a><a href="/tags">标签</a><a class="active" href="/archives">归档</a></nav></div>
 
-  <div class='post-list'>
-  	
-  	
-  		
-  		
-  			
-  		
-  	
-  		
-  		
-  	
-  		
-  		
-  	
-  		
-  		
-  	
-  		
-  		
-  	
-  	
-  		<article class='' id='archive'>
-  			<div class='archive-header h4'>2023</div>
-  			
-  				
-  		    
-  				
-  		    
-  				
-  		    
-  				
-  		    
-  				
-  		    
-  				<div class='archive-list'>
-            <a class='post fs14' href="/2023/09/22/e203%20icb%20%E6%80%BB%E7%BA%BF%E5%88%86%E6%9E%90/">
-    					<time>09-22</time>
-    					<span>
-                
-      						E203 ICB 总线地址范围判断
-      					
-              </span>
-    				</a>
-          </div>
-  			
-  				<div class='archive-list'>
-            <a class='post fs14' href="/2023/09/22/%E4%B8%BA%20RT-thread%20%E6%8F%90%E4%BA%A4%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%20PR/">
-    					<time>09-22</time>
-    					<span>
-                
-      						为 RT-thread 提交的第一个 PR
-      					
-              </span>
-    				</a>
-          </div>
-  			
-  				<div class='archive-list'>
-            <a class='post fs14' href="/2023/09/22/Archlinux%20%E8%A7%A3%E5%86%B3%20KDE%20X11%20%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E5%B1%8F%E5%B9%95%E6%92%95%E8%A3%82%E7%9A%84%E9%97%AE%E9%A2%98/">
-    					<time>09-22</time>
-    					<span>
-                
-      						Archlinux 解决 KDE X11 多显示器屏幕撕裂的问题
-      					
-              </span>
-    				</a>
-          </div>
-  			
-  				<div class='archive-list'>
-            <a class='post fs14' href="/2023/09/22/cva6%20%E4%B9%B1%E5%BA%8F%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86/">
-    					<time>09-22</time>
-    					<span>
-                
-      						CVA6 乱序执行原理
-      					
-              </span>
-    				</a>
-          </div>
-  			
-  				<div class='archive-list'>
-            <a class='post fs14' href="/2023/09/22/hello-world/">
-    					<time>09-22</time>
-    					<span>
-                
-      						Hello World
-      					
-              </span>
-    				</a>
-          </div>
-  			
-  		</article>
-  	
-  </div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/E203/">E203</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-09-22T15:15:38.648Z">2023-09-22</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>E203 ICB 总线地址范围判断</span></h1>
+<h1 id="E203-ICB-总线地址范围判断"><a href="#E203-ICB-总线地址范围判断" class="headerlink" title="E203 ICB 总线地址范围判断"></a>E203 ICB 总线地址范围判断</h1><h2 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h2><blockquote>
+<p>参考《手把手教你设计 RISC-V 处理器》</p>
+</blockquote>
+<h2 id="地址范围判断"><a href="#地址范围判断" class="headerlink" title="地址范围判断"></a>地址范围判断</h2><p>在我参加<code>一生一芯</code> 时，也需要对总线的地址范围进行判断来确定哪一部分是需要进行 <code>Cache</code> 缓存的。我当时是这样写的</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assign</span> in_area = addr&gt;=low &amp;&amp; addr&lt;high</span><br></pre></td></tr></table></figure>
+
+<p>这样写确实可以满足需求，消耗的逻辑元件也会比较多，至少从明面上来看会有两个比较器</p>
+<p><strong>E203 ICB 总线的地址范围判断</strong><br><code>E203</code> 将几大总线的地址范围全都在 <code>config.v</code> 文件里通过宏定义的方式标出来了。下面我用 <code>PPI</code> 总线来举例。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// `E203_CFG_ADDR_SIZE 为 32</span></span><br><span class="line"><span class="comment">//   * PPI       : 0x1000 0000 -- 0x1FFF FFFF</span></span><br><span class="line"><span class="meta">`<span class="keyword">define</span> E203_CFG_PPI_ADDR_BASE  `E203_CFG_ADDR_SIZE&#x27;h1000_0000</span></span><br><span class="line"><span class="comment">// (32-1:32-4)--&gt;(31:28) 即地址高 4 位 --&gt; (32&#x27;h1000_0000 : 32&#x27;h1fff_ffff) 分配给PPI</span></span><br><span class="line"><span class="meta">`<span class="keyword">define</span> E203_CFG_PPI_BASE_REGION  `E203_CFG_ADDR_SIZE-1:`E203_CFG_ADDR_SIZE-4</span></span><br></pre></td></tr></table></figure>
+
+<p>具体使用方法如下：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ppi_region_indic 等于 E203_CFG_PPI_ADDR_BASE</span></span><br><span class="line"><span class="comment">// E203_PPI_BASE_REGION 等于 E203_CFG_PPI_BASE_REGION</span></span><br><span class="line"> <span class="keyword">wire</span> buf_icb_cmd_ppi = ppi_icb_enable &amp; (buf_icb_cmd_addr[`E203_PPI_BASE_REGION] ==  ppi_region_indic[`E203_PPI_BASE_REGION]);</span><br></pre></td></tr></table></figure>
+
+<p>乍一看可能会很茫然，但其实原理很简单，就是通过比较地址的高 4 位来确定是否在范围内，通过高位来限制范围。</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/leesum1/doc/img/icb%E5%9C%B0%E5%9D%80%E5%88%A4%E6%96%AD.drawio1.png"/></div></div>
+
+<p>这样做无疑减少了逻辑器件的消耗，但是是粗细粒度的控制。这种范围控制方式有点类似于计算机网络中子网掩码的概念（原理上应该是一样的）。</p>
+<p>知道原理后，再去看 <code>icb</code> 总线扩展模块 <code>rtl/e203/fab/sirv_icb1to16_bus.v</code>，就不会像开始那样一脸茫然了。我截了一部分来分析原理</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/leesum1/doc/img/202304181517305.png" alt="image.png"/></div><div class="image-meta"><span class="image-caption center">image.png</span></div></div>
+
+<p>这是一个将一个 <code>icb</code> 总线扩展为 16 个 <code>icb</code> 总线的模块，总裁方式是固定优先级，具体实现方式我也没有深究，在这里仅仅分析一些地址的划分。地址划分主要与两个配置参数有关 <code>BASE_ADDR</code> <code>BASE_REGION_LSB</code>，以 <code>AON</code> 为例：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  * AON       : 0x1000 0000 -- 0x1000 7FFF</span></span><br><span class="line"><span class="variable">.O0_BASE_ADDR</span>       (<span class="number">32&#x27;h1000_0000</span>),       </span><br><span class="line"><span class="variable">.O0_BASE_REGION_LSB</span> (<span class="number">15</span>),</span><br></pre></td></tr></table></figure>
+
+<p><code>O0_BASE_ADDR</code> 确定起始地址<br><code>O0_BASE_REGION_LSB</code> 确定地址范围所需要的位数，从低位开始<br>将 <code>0x1000 0000 -- 0x1000 7FFF</code> 转换为 2 进制后如下图所示，就可以按照上面所说，通过比较高位蓝色的部分来确定地址范围了。</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/leesum1/doc/img/202304181529359.png" alt="image.png"/></div><div class="image-meta"><span class="image-caption center">image.png</span></div></div>
+
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/09/22/%E4%B8%BA%20RT-thread%20%E6%8F%90%E4%BA%A4%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%20PR/">为 RT-thread 提交的第一个 PR</a></div></section></div>
+
+
+<div class="related-wrap reveal" id="related-posts"></div>
+
+
+
 
 
       
